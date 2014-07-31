@@ -20,3 +20,6 @@
 
 # Ignore database config
 /config/database.yml
+
+# Ignore a coverage reports.
+/coverage
