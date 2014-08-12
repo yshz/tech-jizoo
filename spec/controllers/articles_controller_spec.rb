@@ -23,4 +23,29 @@ describe ArticlesController do
       end
     end
   end
+
+  describe 'GET #show' do
+    context 'データベースに記事データが入っている' do
+      before do
+        Article.create_articles
+        @params = { year: '2014', month: '08', day: '11', title: 'Lorem ipsum' }
+      end
+
+      it 'ステータスコード200を返す' do
+        get :show, @params
+        expect(response).to be_success
+        expect(response.status).to eq(200)
+      end
+
+      it 'showテンプレートを描画する' do
+        get :show, @params
+        expect(response).to render_template(:show)
+      end
+
+      it '@article に、リクエストした Article オブジェクトを格納する' do
+        # get :show, @params
+        # expect(assigns(:article)).to eq(Article)
+      end
+    end
+  end
 end
