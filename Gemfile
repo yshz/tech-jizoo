@@ -11,6 +11,8 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'slim'
 gem 'slim-rails'
+gem 'kramdown'
+gem 'rake_shared_context'
 
 group :development do
   gem 'rails-erd'
