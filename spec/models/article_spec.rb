@@ -9,6 +9,15 @@ RSpec.describe Article, :type => :model do
     it 'Articlesテーブルが作成される' do
       expect(Article.all).not_to be_empty
     end
+
+    it '複数回実行しても記事の全件数が変わらない' do
+      glob_paths_size = Dir.glob("#{Rails.root}/app/articles/*.md").size
+      expect(Article.all.size).to eq(glob_paths_size)
+      Article.create_articles
+      expect(Article.all.size).to eq(glob_paths_size)
+      Article.create_articles
+      expect(Article.all.size).to eq(glob_paths_size)
+    end
   end
 
   describe '#parse_article_title' do
