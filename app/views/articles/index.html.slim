@@ -1,0 +1,13 @@
+.col-md-8
+  - @articles.each do |article|
+    h2
+      = link_to(article.title, "#{article_permalink(article)}")
+    p
+      span.glyphicon.glyphicon-time
+      |  #{article.published_at}
+    = image_tag('http://placehold.it/900x300', class: 'img-responsive',  alt: '')
+    p = truncate(strip_tags(article.body), length: 200)
+    = link_to("#{article_permalink(article)}") do
+      | Read More
+      span.glyphicon.glyphicon-chevron-right
+    hr

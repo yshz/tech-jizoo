@@ -8,5 +8,7 @@ html
   body
     = render 'shared/header'
     .container
-      == yield
+      .row
+        = yield
+        = render 'shared/side'
       = render 'shared/footer'

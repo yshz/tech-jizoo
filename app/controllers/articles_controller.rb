@@ -1,6 +1,7 @@
 class ArticlesController < ApplicationController
+  before_action :set_ariticles
+
   def index
-    @articles = Article.all
   end
 
   def show
@@ -10,5 +11,11 @@ class ArticlesController < ApplicationController
     title    = params[:title]
     file_name = "#{year}-#{month}-#{day}-#{title}"
     @article = Article.find_by!(file_name: file_name)
+  end
+
+  private
+
+  def set_ariticles
+    @articles = Article.all
   end
 end
