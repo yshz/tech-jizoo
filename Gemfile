@@ -13,6 +13,7 @@ gem 'slim'
 gem 'slim-rails'
 gem 'kramdown'
 gem 'rake_shared_context'
+gem 'bootstrap-sass'
 
 group :development do
   gem 'rails-erd'
