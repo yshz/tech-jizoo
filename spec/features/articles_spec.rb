@@ -21,6 +21,8 @@ feature '記事詳細の表示' do
 
     expect(page).to have_title('jizoo blog - Lorem ipsum')
     expect(page).to have_css('h1', text: 'Lorem ipsum')
+    expect(page).to have_css('li', text: 'Lorem ipsum')
+    expect(page).to have_css('footer', text: 'jizoo')
   end
 end
 
