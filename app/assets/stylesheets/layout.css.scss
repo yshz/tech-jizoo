@@ -1,0 +1,20 @@
+// universal
+
+body {
+  padding-top: 70px;
+}
+
+// footer
+
+footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid $gray-lighter;
+  color: $gray-light;
+  a {
+    color: $gray;
+    &:hover {
+      color: $gray-darker;
+    }
+  }
+}

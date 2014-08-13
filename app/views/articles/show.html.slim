@@ -1,1 +1,8 @@
-== @article.body
+.col-lg-8
+  h1 = @article.title
+  hr
+  p
+  span.glyphicon.glyphicon-time
+  |  #{@article.published_at}
+  hr
+  == @article.body

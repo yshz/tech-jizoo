@@ -11,4 +11,12 @@ module ArticlesHelper
     }
     article_path(options)
   end
+
+  def article_title(article)
+    if article.present?
+      strip_tags(article.title)
+    else
+      nil
+    end
+  end
 end

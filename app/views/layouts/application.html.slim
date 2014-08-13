@@ -1,9 +1,14 @@
 doctype 5
 html
   head
-    title TechJizoo
+    title = full_title(article_title(@article))
     == stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
     == javascript_include_tag 'application', 'data-turbolinks-track' => true
     == csrf_meta_tags
   body
-    == yield
+    = render 'shared/header'
+    .container
+      .row
+        = yield
+        = render 'shared/side'
+      = render 'shared/footer'

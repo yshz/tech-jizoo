@@ -1,6 +1,6 @@
 # Lorem ipsum
 
-<a href="http://placehold.it/700x400/27709b/ffffff/"><img src="http://placehold.it/700x400/27709b/ffffff"></a>
+<a href="http://placehold.it/900x300/"><img class="img-responsive" src="http://placehold.it/900x300"></a>
 
 Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas [a link](http://en.wikipedia.org/wiki/Lorem_ipsum).
 
