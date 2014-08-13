@@ -27,7 +27,9 @@ class Article < ActiveRecord::Base
 
   def self.parse_article_body(path)
     text = File.open(path).read
-    Kramdown::Document.new(text, auto_ids: false).to_html
+    index = text.lines.index { |v| v.match(/^#\s/) }.succ
+    body_text = text.lines[index..-1].join
+    Kramdown::Document.new(body_text, auto_ids: false).to_html.strip
   end
 
   def self.parse_article_name(path)
