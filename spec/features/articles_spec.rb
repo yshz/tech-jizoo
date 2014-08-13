@@ -18,6 +18,7 @@ feature '記事詳細の表示' do
     visit root_path
     click_link 'Lorem ipsum'
 
+    expect(page).to have_title('jizoo blog - Lorem ipsum')
     expect(page).to have_css('h1', text: 'Lorem ipsum')
   end
 end
