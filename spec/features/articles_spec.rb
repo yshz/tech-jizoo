@@ -18,3 +18,12 @@ feature '記事詳細の表示' do
     expect(page).to have_css('h1', text: 'Lorem ipsum')
   end
 end
+
+feature '存在しないページにアクセスする' do
+  scenario 'ステータスコード404が返る' do
+    visit '/2014/01/01/invalid-url'
+    expect(page.status_code).to eq(404)
+    expect(page).to have_text('ページは見つかりません。')
+    expect(page).to have_link('home', href: root_path)
+  end
+end
