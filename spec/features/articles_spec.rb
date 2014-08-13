@@ -5,7 +5,10 @@ feature '記事一覧の表示' do
     Article.create_articles
     visit root_path
 
+    expect(page).to have_title('jizoo blog')
+    expect(page).to have_link('jizoo blog')
     expect(page).to have_css('li', text: 'Lorem ipsum')
+    expect(page).to have_css('footer', text: 'jizoo')
   end
 end
 
