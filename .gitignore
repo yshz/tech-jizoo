@@ -23,3 +23,6 @@
 
 # Ignore a coverage reports.
 /coverage
+
+# Ignore precompile files
+/public/assets/*

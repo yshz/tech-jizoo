@@ -2,7 +2,6 @@ source 'https://rubygems.org'
 ruby '2.1.2'
 
 gem 'rails', '4.1.4'
-gem 'sqlite3'
 gem 'sass-rails', '~> 4.0.3'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
@@ -14,8 +13,12 @@ gem 'slim-rails'
 gem 'kramdown'
 gem 'rake_shared_context'
 gem 'bootstrap-sass'
+gem 'foreman'
+gem 'puma'
+gem 'newrelic_rpm'
 
 group :development do
+  gem 'sqlite3'
   gem 'rails-erd'
   gem 'spring'
   gem 'rails_best_practices'
@@ -37,4 +40,9 @@ group :test do
   gem 'capybara'
   gem 'coveralls', require: false
   gem 'simplecov', require: false
+end
+
+group :production do
+  gem 'pg'
+  gem 'rails_12factor'
 end
