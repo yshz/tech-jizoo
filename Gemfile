@@ -14,6 +14,8 @@ gem 'slim-rails'
 gem 'kramdown'
 gem 'rake_shared_context'
 gem 'bootstrap-sass'
+gem 'foreman'
+gem 'puma'
 
 group :development do
   gem 'rails-erd'
