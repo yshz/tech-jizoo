@@ -23,6 +23,7 @@ group :development do
   gem 'spring'
   gem 'rails_best_practices'
   gem 'guard-livereload'
+  gem 'guard-rake'
 
   # debug
   gem 'better_errors'
