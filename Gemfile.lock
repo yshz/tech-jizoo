@@ -149,6 +149,7 @@ GEM
     puma (2.9.0)
       rack (>= 1.1, < 2.0)
     rack (1.5.2)
+    rack-rewrite (1.4.1)
     rack-test (0.6.2)
       rack (>= 1.0)
     rails (4.1.4)
@@ -292,6 +293,7 @@ DEPENDENCIES
   pry-byebug
   pry-rails
   puma
+  rack-rewrite
   rails (= 4.1.4)
   rails-erd
   rails_12factor
