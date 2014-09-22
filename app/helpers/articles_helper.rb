@@ -6,8 +6,7 @@ module ArticlesHelper
       year: published_at.strftime('%Y'),
       month: published_at.strftime('%m'),
       day: published_at.strftime('%d'),
-      title: title,
-      format: :html
+      title: title
     }
     article_path(options)
   end
