@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe Article, :type => :model do
   let (:path) { "#{Rails.root}/spec/articles/2014-01-01-test.md" }
 
-  describe '#create_articles' do
+  describe '.create_articles' do
     before { Article.create_articles }
 
     it 'Articlesテーブルが作成される' do
@@ -20,32 +20,40 @@ RSpec.describe Article, :type => :model do
     end
   end
 
-  describe '#parse_article_title' do
+  describe '.parse_article_title' do
     it 'MarkdownのH1要素(`# `で始まる行)を取得する' do
       title = Article.parse_article_title(path)
       expect(title).to eq('Article Title')
     end
   end
 
-  describe '#parse_article_body' do
+  describe '.parse_article_body' do
     it 'Markdownの内容全体を取得する' do
       body = Article.parse_article_body(path)
       expect(body).to match(/<h2>/)
     end
   end
 
-  describe '#parse_article_name' do
+  describe '.parse_article_name' do
     it '.mdを除いたファイル名を取得する' do
       name = Article.parse_article_name(path)
       expect(name).to eq('2014-01-01-test')
     end
   end
 
-  describe '#parse_article_date' do
+  describe '.parse_article_date' do
     it 'ファイル名から日付を取得する' do
       path = "#{Rails.root}/spec/articles/2014-01-01-test.md"
       date = Article.parse_article_date(path)
       expect(date).to eq(Date::new(2014, 1, 1))
+    end
+  end
+
+  describe '.parse_article_slug' do
+    it 'ファイル名からスラッグ（文字列）を取得する' do
+      path = "#{Rails.root}/spec/articles/2014-01-01-test.md"
+      slug = Article.parse_article_slug(path)
+      expect(slug).to eq('test')
     end
   end
 end

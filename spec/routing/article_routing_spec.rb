@@ -14,7 +14,7 @@ describe ArticlesController do
 
       it '`#show`にルーティングされる' do
         expect(get('/2014/01/01/test')).to route_to('articles#show',
-          year: '2014', month: '01', day: '01', title: 'test')
+          year: '2014', month: '01', day: '01', slug: 'test')
         expect(get('/articles/1/')).not_to be_routable
       end
     end

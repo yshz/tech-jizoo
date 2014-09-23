@@ -5,11 +5,11 @@ class ArticlesController < ApplicationController
   end
 
   def show
-    year     = params[:year]
-    month    = params[:month]
-    day      = params[:day]
-    title    = params[:title]
-    file_name = "#{year}-#{month}-#{day}-#{title}"
+    year    = params[:year]
+    month = params[:month]
+    day     = params[:day]
+    slug    = params[:slug]
+    file_name = "#{year}-#{month}-#{day}-#{slug}"
     @article = Article.find_by!(file_name: file_name)
   end
 

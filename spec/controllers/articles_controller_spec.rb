@@ -28,7 +28,7 @@ describe ArticlesController do
     context 'データベースに記事データが入っている' do
       before do
         Article.create_articles
-        @params = { year: '2014', month: '08', day: '11', title: 'lorem-ipsum' }
+        @params = { year: '2014', month: '08', day: '11', slug: 'lorem-ipsum' }
       end
 
       it 'ステータスコード200を返す' do
