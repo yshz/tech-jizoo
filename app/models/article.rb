@@ -1,6 +1,8 @@
 class Article < ActiveRecord::Base
   GLOB_PATH = "#{Rails.root}/app/articles/*.md"
 
+  default_scope { order(published_at: :desc) }
+
   class << self
     def create_articles
       before_ids = Article.pluck(:id)
