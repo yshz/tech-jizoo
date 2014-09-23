@@ -10,6 +10,7 @@ class Article < ActiveRecord::Base
       article.title = parse_article_title(path)
       article.body = parse_article_body(path)
       article.published_at = parse_article_date(path)
+      article.slug = parse_article_slug(path)
       article.save!
 
       after_ids << article.id
@@ -39,5 +40,10 @@ class Article < ActiveRecord::Base
   def self.parse_article_date(path)
     md = /\/(20\d{2})-([01]\d)-([0-3]\d)-(.+)\.md/.match(path)
     Date.new(md[1].to_i, md[2].to_i, md[3].to_i)
+  end
+
+  def self.parse_article_slug(path)
+    md = /\/(20\d{2})-([01]\d)-([0-3]\d)-(.+)\.md/.match(path)
+    md[4]
   end
 end

@@ -48,4 +48,12 @@ RSpec.describe Article, :type => :model do
       expect(date).to eq(Date::new(2014, 1, 1))
     end
   end
+
+  describe '#parse_article_slug' do
+    it 'ファイル名からスラッグ（文字列）を取得する' do
+      path = "#{Rails.root}/spec/articles/2014-01-01-test.md"
+      slug = Article.parse_article_slug(path)
+      expect(slug).to eq('test')
+    end
+  end
 end
